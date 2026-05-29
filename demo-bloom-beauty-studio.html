@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Bloom Beauty Studio — Roseville, CA</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--rose:#c9736a;--blush:#f7e8e6;--cream:#fdf8f5;--dark:#2a1f1d;--muted:#998885;--font-h:'Playfair Display',serif;--font-b:'Jost',sans-serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-b);background:var(--cream);color:var(--dark);font-size:16px}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(253,248,245,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,115,106,0.12);display:flex;justify-content:space-between;align-items:center;padding:18px 48px}
+.logo{font-family:var(--font-h);font-size:20px;color:var(--dark);text-decoration:none;letter-spacing:0.5px}
+.logo em{color:var(--rose);font-style:italic}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--rose)}
+.nav-btn{background:var(--rose);color:#fff;padding:10px 22px;font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:background .2s}
+.nav-btn:hover{background:#b5625a}
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:0 48px;padding-top:80px;background:var(--blush)}
+.hero-left{padding-right:60px}
+.hero-tag{font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--rose);margin-bottom:20px}
+h1{font-family:var(--font-h);font-size:clamp(40px,5vw,64px);font-weight:400;line-height:1.15;color:var(--dark);margin-bottom:20px}
+h1 em{color:var(--rose)}
+.hero-sub{font-size:16px;font-weight:300;color:var(--muted);line-height:1.8;max-width:420px;margin-bottom:36px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-p{background:var(--rose);color:#fff;padding:14px 30px;font-size:13px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:background .2s}
+.btn-p:hover{background:#b5625a}
+.btn-s{border:1px solid var(--rose);color:var(--rose);padding:14px 30px;font-size:13px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:all .2s}
+.btn-s:hover{background:var(--rose);color:#fff}
+.hero-right{display:flex;flex-direction:column;gap:16px}
+.hero-img-main{background:linear-gradient(135deg,#c9736a,#e8a89f);border-radius:4px;aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;font-size:120px}
+.hero-img-small{background:linear-gradient(135deg,#f7e8e6,#e0c4c0);border-radius:4px;padding:20px;display:flex;align-items:center;gap:12px}
+.badge-text{font-family:var(--font-h);font-size:15px;color:var(--dark)}
+.badge-sub{font-size:12px;color:var(--muted);margin-top:2px}
+section{padding:100px 48px}
+.section-tag{font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--rose);margin-bottom:14px}
+h2{font-family:var(--font-h);font-size:clamp(32px,4vw,48px);font-weight:400;line-height:1.2;margin-bottom:16px}
+.services{background:var(--cream)}
+.services-intro{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:56px}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#e8d5d2}
+.service-card{background:var(--cream);padding:36px 28px;transition:background .2s}
+.service-card:hover{background:var(--blush)}
+.s-icon{font-size:32px;margin-bottom:16px}
+.s-title{font-family:var(--font-h);font-size:19px;font-weight:700;margin-bottom:8px;color:var(--dark)}
+.s-price{font-size:13px;font-weight:500;color:var(--rose);margin-bottom:10px;letter-spacing:0.05em}
+.s-desc{font-size:14px;color:var(--muted);line-height:1.7}
+.gallery{background:var(--blush)}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:48px}
+.gallery-item{border-radius:4px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:60px;overflow:hidden}
+.reviews{background:var(--cream)}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.review-card{background:var(--blush);padding:32px;border-radius:4px}
+.stars{color:var(--rose);font-size:14px;letter-spacing:3px;margin-bottom:14px}
+.review-text{font-family:var(--font-h);font-size:15px;font-style:italic;color:var(--dark);line-height:1.75;margin-bottom:20px}
+.reviewer{font-size:13px;font-weight:500;color:var(--muted)}
+.book-section{background:var(--rose);text-align:center;padding:80px 48px}
+.book-section h2{color:#fff;margin-bottom:12px}
+.book-section p{color:rgba(255,255,255,0.75);font-size:16px;margin-bottom:32px}
+.btn-white{background:#fff;color:var(--rose);padding:14px 32px;font-size:13px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;display:inline-block;transition:all .2s}
+.btn-white:hover{background:var(--blush)}
+.contact{background:var(--cream)}
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px}
+.contact-info h3{font-family:var(--font-h);font-size:28px;margin-bottom:24px}
+.c-item{display:flex;gap:12px;align-items:center;margin-bottom:18px;font-size:14px;color:var(--muted)}
+.c-dot{width:8px;height:8px;background:var(--rose);border-radius:50%;flex-shrink:0}
+.hours{margin-top:28px;background:var(--blush);padding:24px;border-radius:4px}
+.hours-title{font-family:var(--font-h);font-size:16px;margin-bottom:14px}
+.hours-row{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);padding:6px 0;border-bottom:1px solid rgba(201,115,106,0.12)}
+form{display:flex;flex-direction:column;gap:14px}
+input,select,textarea{padding:12px 16px;border:1px solid #ddd;background:var(--blush);font-family:var(--font-b);font-size:14px;border-radius:2px;outline:none;transition:border-color .2s;width:100%}
+input:focus,select:focus,textarea:focus{border-color:var(--rose)}
+textarea{min-height:90px;resize:vertical}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.submit-btn{background:var(--rose);color:#fff;border:none;padding:14px;font-family:var(--font-b);font-size:14px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:background .2s}
+.submit-btn:hover{background:#b5625a}
+footer{background:var(--dark);color:rgba(255,255,255,0.4);text-align:center;padding:28px;font-size:12px;letter-spacing:0.05em}
+footer span{color:var(--rose)}
+@media(max-width:768px){nav{padding:16px 24px}.nav-links{display:none}.hero{grid-template-columns:1fr;padding:100px 24px 60px}.hero-left{padding:0}.hero-right{display:none}section{padding:70px 24px}.services-grid,.gallery-grid,.reviews-grid,.contact-wrap,.services-intro{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="#" class="logo">Bloom <em>Beauty</em> Studio</a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Book</a></li>
+  </ul>
+  <a href="#contact" class="nav-btn">Book Now</a>
+</nav>
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">Roseville's Premier Beauty Studio</div>
+    <h1>Beauty That <em>Speaks</em> for Itself.</h1>
+    <p class="hero-sub">Expert lash extensions, brow sculpting, and skincare in a private, luxurious studio. Walk in feeling good. Leave feeling extraordinary.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-p">Book Appointment</a>
+      <a href="#services" class="btn-s">View Services</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img-main">💅</div>
+    <div class="hero-img-small">
+      <span style="font-size:28px">⭐</span>
+      <div><div class="badge-text">200+ Five-Star Reviews</div><div class="badge-sub">on Google & Yelp</div></div>
+    </div>
+  </div>
+</section>
+<section id="services" class="services">
+  <div class="services-intro">
+    <div><div class="section-tag">Our Services</div><h2>Every Service, Perfected.</h2></div>
+    <p style="color:var(--muted);font-size:15px;line-height:1.8">Each service is performed by a licensed aesthetician with 10+ years of experience. We use only premium, skin-safe products.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card"><div class="s-icon">👁️</div><div class="s-title">Lash Extensions</div><div class="s-price">From $120</div><div class="s-desc">Classic, hybrid, and volume sets. Natural to dramatic — we customize every set to your eye shape and lifestyle.</div></div>
+    <div class="service-card"><div class="s-icon">✨</div><div class="s-title">Brow Sculpting</div><div class="s-price">From $55</div><div class="s-desc">Waxing, threading, and tinting. We shape brows that frame your face perfectly and last for weeks.</div></div>
+    <div class="service-card"><div class="s-icon">🌿</div><div class="s-title">Facial Treatments</div><div class="s-price">From $85</div><div class="s-desc">Customized facials for acne, anti-aging, hydration, and glow. Includes extractions, masks, and LED therapy.</div></div>
+    <div class="service-card"><div class="s-icon">💋</div><div class="s-title">Lip Blushing</div><div class="s-price">From $450</div><div class="s-desc">Semi-permanent lip color that enhances your natural lip shape with soft, buildable color. Lasts 2–3 years.</div></div>
+    <div class="service-card"><div class="s-icon">🦋</div><div class="s-title">Microblading</div><div class="s-price">From $400</div><div class="s-desc">Natural-looking hair strokes that fill and define sparse brows. Wake up with perfect brows every single day.</div></div>
+    <div class="service-card"><div class="s-icon">🧖</div><div class="s-title">Body Waxing</div><div class="s-price">From $35</div><div class="s-desc">Full body waxing services in a clean, comfortable setting. Smooth results that last 4–6 weeks.</div></div>
+  </div>
+</section>
+<section id="gallery" class="gallery">
+  <div class="section-tag">Our Work</div>
+  <h2>Results That Speak for Themselves.</h2>
+  <div class="gallery-grid">
+    <div class="gallery-item" style="background:linear-gradient(135deg,#c9736a,#e8a89f)">💆</div>
+    <div class="gallery-item" style="background:linear-gradient(135deg,#f7e8e6,#d4a0a0)">✨</div>
+    <div class="gallery-item" style="background:linear-gradient(135deg,#b5625a,#c9736a)">👁️</div>
+    <div class="gallery-item" style="background:linear-gradient(135deg,#e8c4c0,#f7e8e6)">💋</div>
+  </div>
+</section>
+<section id="reviews" class="reviews">
+  <div class="section-tag">Client Love</div>
+  <h2>What Our Clients Say</h2>
+  <div class="reviews-grid">
+    <div class="review-card"><div class="stars">★★★★★</div><p class="review-text">"The best lash tech in Roseville, hands down. My lashes have never looked so natural and full. I won't go anywhere else."</p><div class="reviewer">Ashley T. · Roseville</div></div>
+    <div class="review-card"><div class="stars">★★★★★</div><p class="review-text">"I was nervous about microblading but the results are absolutely stunning. So natural. My confidence has completely transformed."</p><div class="reviewer">Jennifer M. · Lincoln</div></div>
+    <div class="review-card"><div class="stars">★★★★★</div><p class="review-text">"Clean studio, amazing results, and the sweetest owner. I've been coming here for two years and will never leave. Truly the best."</p><div class="reviewer">Rachel S. · Rocklin</div></div>
+  </div>
+</section>
+<section class="book-section">
+  <h2>Ready for Your Glow Up?</h2>
+  <p>Spots fill fast — book your appointment online in under a minute.</p>
+  <a href="#contact" class="btn-white">Book My Appointment</a>
+</section>
+<section id="contact" class="contact">
+  <div class="contact-wrap">
+    <div class="contact-info">
+      <div class="section-tag">Find Us</div>
+      <h3>Bloom Beauty Studio</h3>
+      <div class="c-item"><div class="c-dot"></div>4820 Granite Drive, Ste 12, Roseville, CA 95678</div>
+      <div class="c-item"><div class="c-dot"></div>(916) 555-0234</div>
+      <div class="c-item"><div class="c-dot"></div>hello@bloombeautystudio.com</div>
+      <div class="hours">
+        <div class="hours-title">Studio Hours</div>
+        <div class="hours-row"><span>Tuesday – Friday</span><span>9am – 7pm</span></div>
+        <div class="hours-row"><span>Saturday</span><span>9am – 5pm</span></div>
+        <div class="hours-row" style="border:none"><span>Sunday – Monday</span><span>Closed</span></div>
+      </div>
+    </div>
+    <form onsubmit="event.preventDefault();this.innerHTML='<div style=\'text-align:center;padding:40px\'><div style=\'font-size:48px;margin-bottom:12px\'>🌸</div><div style=\'font-family:Playfair Display,serif;font-size:22px\'>You\'re booked! We\'ll confirm via text shortly.</div></div>'">
+      <div class="form-row"><input placeholder="First Name" required/><input placeholder="Last Name" required/></div>
+      <input type="tel" placeholder="Phone Number" required/>
+      <input type="email" placeholder="Email" required/>
+      <select><option>Select a Service</option><option>Lash Extensions</option><option>Brow Sculpting</option><option>Facial Treatment</option><option>Microblading</option><option>Lip Blushing</option><option>Body Waxing</option></select>
+      <input type="date"/>
+      <textarea placeholder="Any questions or notes for us?"></textarea>
+      <button type="submit" class="submit-btn">Request Appointment →</button>
+    </form>
+  </div>
+</section>
+<footer>© 2025 <span>Bloom Beauty Studio</span> · Roseville, CA · All Rights Reserved</footer>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Valley Strong Roofing — Sacramento, CA</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--red:#c0392b;--dark:#1a1a1a;--white:#fff;--off:#f5f2ee;--muted:#888;--font-h:'Oswald',sans-serif;--font-b:'Source Sans 3',sans-serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-b);background:var(--white);color:var(--dark);font-size:16px}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,26,26,0.95);backdrop-filter:blur(10px);display:flex;justify-content:space-between;align-items:center;padding:16px 48px}
+.logo{font-family:var(--font-h);font-size:22px;font-weight:700;color:var(--white);text-decoration:none;letter-spacing:1px}
+.logo span{color:var(--red)}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-btn{background:var(--red);color:#fff;padding:10px 20px;border-radius:4px;font-weight:700;font-size:13px;text-decoration:none;transition:background .2s}
+.nav-btn:hover{background:#a93226}
+.hero{min-height:100vh;background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url('https://images.unsplash.com/photo-1632833239869-a37e3a5806d2?w=1600&q=80') center/cover;display:flex;align-items:center;padding:0 48px;padding-top:80px}
+.hero-content{max-width:680px}
+.hero-badge{display:inline-block;background:var(--red);color:#fff;font-family:var(--font-h);font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:6px 14px;margin-bottom:20px}
+h1{font-family:var(--font-h);font-size:clamp(48px,7vw,80px);font-weight:700;color:#fff;line-height:1;letter-spacing:1px;margin-bottom:20px}
+h1 span{color:var(--red)}
+.hero-sub{font-size:18px;color:rgba(255,255,255,0.8);font-weight:300;line-height:1.7;margin-bottom:36px;max-width:500px}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap}
+.btn-r{background:var(--red);color:#fff;padding:14px 28px;font-family:var(--font-h);font-size:16px;font-weight:600;letter-spacing:0.05em;text-decoration:none;border-radius:4px;transition:background .2s}
+.btn-r:hover{background:#a93226}
+.btn-o{border:2px solid #fff;color:#fff;padding:14px 28px;font-family:var(--font-h);font-size:16px;font-weight:600;letter-spacing:0.05em;text-decoration:none;border-radius:4px;transition:all .2s}
+.btn-o:hover{background:#fff;color:var(--dark)}
+.stats-bar{background:var(--red);display:grid;grid-template-columns:repeat(4,1fr);text-align:center}
+.stat{padding:28px 16px;border-right:1px solid rgba(255,255,255,0.15)}
+.stat:last-child{border:none}
+.stat-val{font-family:var(--font-h);font-size:36px;font-weight:700;color:#fff}
+.stat-label{font-size:12px;color:rgba(255,255,255,0.7);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px}
+section{padding:100px 48px}
+.section-tag{font-family:var(--font-h);font-size:12px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--red);margin-bottom:12px}
+h2{font-family:var(--font-h);font-size:clamp(32px,4vw,48px);font-weight:700;letter-spacing:0.5px;margin-bottom:16px;line-height:1.1}
+.services{background:var(--off)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.service-card{background:#fff;padding:36px;border-top:4px solid var(--red);box-shadow:0 2px 20px rgba(0,0,0,0.06)}
+.s-icon{font-size:40px;margin-bottom:16px}
+.s-title{font-family:var(--font-h);font-size:20px;font-weight:600;margin-bottom:10px}
+.s-desc{font-size:14px;color:#666;line-height:1.7}
+.why{background:#fff}
+.why-wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.why-img{background:linear-gradient(135deg,#1a1a1a,#c0392b);border-radius:8px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font-size:100px}
+.why-points{display:flex;flex-direction:column;gap:24px;margin-top:36px}
+.why-point{display:flex;gap:16px;align-items:flex-start}
+.why-check{width:28px;height:28px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;flex-shrink:0;margin-top:2px}
+.why-text-title{font-family:var(--font-h);font-size:16px;font-weight:600;margin-bottom:4px}
+.why-text-desc{font-size:14px;color:#666;line-height:1.6}
+.reviews{background:var(--off)}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
+.review-card{background:#fff;padding:32px;box-shadow:0 2px 16px rgba(0,0,0,0.06)}
+.stars{color:#f39c12;font-size:16px;letter-spacing:2px;margin-bottom:14px}
+.review-text{font-size:15px;color:#444;line-height:1.75;font-style:italic;margin-bottom:20px}
+.reviewer{font-family:var(--font-h);font-size:14px;font-weight:600;color:var(--dark)}
+.reviewer-loc{font-size:12px;color:var(--muted);margin-top:2px}
+.cta-section{background:var(--dark);text-align:center;padding:100px 48px}
+.cta-section h2{color:#fff;margin-bottom:16px}
+.cta-section p{color:rgba(255,255,255,0.6);font-size:17px;max-width:500px;margin:0 auto 36px}
+.contact{background:#fff}
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px}
+.contact-info h3{font-family:var(--font-h);font-size:28px;font-weight:700;margin-bottom:24px}
+.c-item{display:flex;gap:12px;align-items:center;margin-bottom:20px;font-size:15px;color:#444}
+.c-icon{width:40px;height:40px;background:var(--off);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+form{display:flex;flex-direction:column;gap:14px}
+input,select,textarea{padding:12px 16px;border:1px solid #ddd;font-family:var(--font-b);font-size:14px;border-radius:4px;outline:none;transition:border-color .2s;width:100%}
+input:focus,select:focus,textarea:focus{border-color:var(--red)}
+textarea{min-height:100px;resize:vertical}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.submit-btn{background:var(--red);color:#fff;border:none;padding:14px;font-family:var(--font-h);font-size:16px;font-weight:600;letter-spacing:0.05em;cursor:pointer;border-radius:4px;transition:background .2s}
+.submit-btn:hover{background:#a93226}
+footer{background:#111;color:rgba(255,255,255,0.5);text-align:center;padding:28px;font-size:13px}
+footer span{color:var(--red)}
+@media(max-width:768px){nav{padding:16px 24px}.nav-links{display:none}.hero{padding:100px 24px 60px}section{padding:70px 24px}.services-grid,.reviews-grid,.why-wrap,.contact-wrap{grid-template-columns:1fr}.stats-bar{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="#" class="logo">Valley Strong <span>Roofing</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-btn">Free Estimate</a>
+</nav>
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">Sacramento's Trusted Roofers</div>
+    <h1>Roofs Built to <span>Last.</span></h1>
+    <p class="hero-sub">Family-owned roofing company serving Sacramento and surrounding areas since 2008. Licensed, insured, and backed by hundreds of 5-star reviews.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-r">Get Free Estimate</a>
+      <a href="#services" class="btn-o">Our Services</a>
+    </div>
+  </div>
+</section>
+<div class="stats-bar">
+  <div class="stat"><div class="stat-val">15+</div><div class="stat-label">Years in Business</div></div>
+  <div class="stat"><div class="stat-val">800+</div><div class="stat-label">Roofs Completed</div></div>
+  <div class="stat"><div class="stat-val">5★</div><div class="stat-label">Google Rating</div></div>
+  <div class="stat"><div class="stat-val">100%</div><div class="stat-label">Licensed & Insured</div></div>
+</div>
+<section id="services" class="services">
+  <div class="section-tag">What We Do</div>
+  <h2>Complete Roofing Services</h2>
+  <div class="services-grid">
+    <div class="service-card"><div class="s-icon">🏠</div><div class="s-title">Roof Replacement</div><div class="s-desc">Full tear-off and replacement with premium materials. We work with asphalt, tile, metal, and flat roofing systems.</div></div>
+    <div class="service-card"><div class="s-icon">🔧</div><div class="s-title">Roof Repair</div><div class="s-desc">Leaks, damaged shingles, flashing issues — we fix it right the first time with a written warranty on all repairs.</div></div>
+    <div class="service-card"><div class="s-icon">🔍</div><div class="s-title">Free Inspections</div><div class="s-desc">Not sure what shape your roof is in? We provide free honest inspections with no pressure to buy anything.</div></div>
+    <div class="service-card"><div class="s-icon">🌧️</div><div class="s-title">Emergency Repairs</div><div class="s-desc">Storm damage doesn't wait. We offer rapid response emergency repairs to protect your home when it matters most.</div></div>
+    <div class="service-card"><div class="s-icon">📋</div><div class="s-title">Insurance Claims</div><div class="s-desc">We work directly with your insurance company to handle the paperwork and get you the full coverage you're owed.</div></div>
+    <div class="service-card"><div class="s-icon">☀️</div><div class="s-title">Solar-Ready Roofing</div><div class="s-desc">Planning to go solar? We install roofs specifically designed to handle solar panel systems safely and efficiently.</div></div>
+  </div>
+</section>
+<section id="why" class="why">
+  <div class="why-wrap">
+    <div class="why-img">🏚️</div>
+    <div>
+      <div class="section-tag">Why Choose Us</div>
+      <h2>Sacramento's Roofers — Not a Franchise</h2>
+      <p style="color:#666;font-size:15px;line-height:1.7">We're a local family business. Every job is personal to us — your home is our reputation.</p>
+      <div class="why-points">
+        <div class="why-point"><div class="why-check">✓</div><div><div class="why-text-title">Lifetime Workmanship Warranty</div><div class="why-text-desc">We stand behind every nail and every shingle we install.</div></div></div>
+        <div class="why-point"><div class="why-check">✓</div><div><div class="why-text-title">Transparent, Written Quotes</div><div class="why-text-desc">No surprise charges. You know the full price before we start.</div></div></div>
+        <div class="why-point"><div class="why-check">✓</div><div><div class="why-text-title">Clean Job Sites Every Day</div><div class="why-text-desc">We clean up completely after every work day. Your yard stays yours.</div></div></div>
+        <div class="why-point"><div class="why-check">✓</div><div><div class="why-text-title">CA Licensed & Fully Insured</div><div class="why-text-desc">Lic #1094872. Your home is protected throughout the entire project.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="reviews" class="reviews">
+  <div class="section-tag">What Customers Say</div>
+  <h2>Hundreds of 5-Star Reviews</h2>
+  <div class="reviews-grid">
+    <div class="review-card"><div class="stars">★★★★★</div><p class="review-text">"Valley Strong replaced our entire roof in two days. Clean, fast, professional. Best contractor experience I've ever had in Sacramento."</p><div class="reviewer">David R.</div><div class="reviewer-loc">Elk Grove, CA</div></div>
+    <div class="review-card"><div class="stars">★★★★★</div><p class="review-text">"Had a major leak before a storm. They came out same day, fixed it, and even helped me with the insurance claim. Couldn't ask for more."</p><div class="reviewer">Maria C.</div><div class="reviewer-loc">Rancho Cordova, CA</div></div>
+    <div class="review-card"><div class="stars">★★★★★</div><p class="review-text">"Fair price, great work, left my yard cleaner than they found it. Will absolutely use them again and I've already referred two neighbors."</p><div class="reviewer">Tom W.</div><div class="reviewer-loc">Folsom, CA</div></div>
+  </div>
+</section>
+<section class="cta-section">
+  <div class="section-tag" style="color:var(--red)">Free No-Pressure Estimate</div>
+  <h2>Get Your Roof Inspected Today</h2>
+  <p>We'll come out, take a look, and give you an honest written quote — completely free, no obligation.</p>
+  <a href="#contact" class="btn-r">Schedule Free Inspection</a>
+</section>
+<section id="contact" class="contact">
+  <div class="contact-wrap">
+    <div class="contact-info">
+      <div class="section-tag">Get In Touch</div>
+      <h3>Request a Free Estimate</h3>
+      <div class="c-item"><div class="c-icon">📞</div>(916) 555-0187</div>
+      <div class="c-item"><div class="c-icon">📧</div>info@valleystrongroofing.com</div>
+      <div class="c-item"><div class="c-icon">📍</div>Serving Sacramento, Elk Grove, Folsom & Roseville</div>
+      <div class="c-item"><div class="c-icon">🕐</div>Mon–Sat: 7am–6pm</div>
+    </div>
+    <form onsubmit="event.preventDefault();this.innerHTML='<div style=\'text-align:center;padding:40px\'><div style=\'font-size:48px;margin-bottom:12px\'>✅</div><div style=\'font-family:Oswald;font-size:22px;font-weight:700\'>Got it! We\'ll call you within 2 hours.</div></div>'">
+      <div class="form-row"><input placeholder="First Name" required/><input placeholder="Last Name" required/></div>
+      <input type="tel" placeholder="Phone Number" required/>
+      <input type="email" placeholder="Email Address" required/>
+      <input placeholder="Property Address"/>
+      <select><option value="">Type of Service</option><option>Roof Replacement</option><option>Roof Repair</option><option>Free Inspection</option><option>Emergency Repair</option><option>Insurance Claim</option></select>
+      <textarea placeholder="Anything else we should know?"></textarea>
+      <button type="submit" class="submit-btn">Request Free Estimate →</button>
+    </form>
+  </div>
+</section>
+<footer>© 2025 <span>Valley Strong Roofing</span> · Sacramento, CA · CA Lic #1094872 · All Rights Reserved</footer>
+</body>
+</html>

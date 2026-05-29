@@ -145,18 +145,10 @@
 
     /* PRICING */
     #pricing { background: var(--gray); }
-    .pricing-header { text-align: center; margin-bottom: 64px; }
+    .pricing-header { text-align: center; margin-bottom: 48px; }
     .pricing-header .section-sub { margin: 0 auto; }
-    .pricing-toggle { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 28px; }
-    .toggle-label { font-size: 14px; font-weight: 500; color: rgba(248,245,240,0.6); }
-    .toggle-label.active { color: var(--white); }
-    .toggle-switch { width: 48px; height: 26px; background: var(--gray2); border-radius: 999px; position: relative; cursor: pointer; border: 1px solid rgba(255,255,255,0.1); transition: background 0.2s; }
-    .toggle-switch.monthly { background: var(--lime); }
-    .toggle-knob { position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; background: var(--black); border-radius: 50%; transition: transform 0.2s; }
-    .toggle-switch.monthly .toggle-knob { transform: translateX(22px); }
-    .save-badge { background: rgba(200,241,53,0.15); color: var(--lime); font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 999px; border: 1px solid rgba(200,241,53,0.25); }
     .pricing-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; max-width: 1100px; margin: 0 auto; }
-    .pricing-card { background: var(--black); border-radius: 16px; padding: 40px 36px; position: relative; border: 1px solid rgba(255,255,255,0.06); transition: transform 0.2s, border-color 0.2s; }
+    .pricing-card { background: var(--black); border-radius: 16px; padding: 40px 36px; position: relative; border: 1px solid rgba(255,255,255,0.06); transition: transform 0.2s, border-color 0.2s; display: flex; flex-direction: column; }
     .pricing-card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.12); }
     .pricing-card.featured { background: var(--lime); color: var(--black); border-color: transparent; }
     .featured-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--orange); color: var(--white); font-size: 11px; font-weight: 700; padding: 5px 16px; border-radius: 999px; letter-spacing: 0.05em; text-transform: uppercase; white-space: nowrap; }
@@ -168,7 +160,7 @@
     .pricing-card.featured .pricing-period { color: rgba(10,10,10,0.5); }
     .pricing-divider { height: 1px; background: rgba(255,255,255,0.08); margin-bottom: 28px; }
     .pricing-card.featured .pricing-divider { background: rgba(10,10,10,0.12); }
-    .pricing-features { list-style: none; margin-bottom: 36px; display: flex; flex-direction: column; gap: 12px; }
+    .pricing-features { list-style: none; margin-bottom: 36px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
     .pricing-features li { font-size: 14px; display: flex; align-items: flex-start; gap: 10px; color: rgba(248,245,240,0.75); line-height: 1.5; }
     .pricing-card.featured .pricing-features li { color: rgba(10,10,10,0.8); }
     .pricing-features li::before { content: '✓'; color: var(--lime); font-weight: 700; font-size: 13px; flex-shrink: 0; margin-top: 1px; }
@@ -177,6 +169,16 @@
     .btn-pricing:hover { background: rgba(255,255,255,0.08); }
     .pricing-card.featured .btn-pricing { background: var(--black); color: var(--lime); border-color: transparent; }
     .pricing-note { text-align: center; margin-top: 32px; font-size: 13px; color: var(--muted); }
+    .retainer-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+    .retainer-card { background: var(--black); border-radius: 16px; padding: 32px 28px; border: 1px solid rgba(255,255,255,0.06); display: flex; flex-direction: column; gap: 12px; transition: transform 0.2s, border-color 0.2s; }
+    .retainer-card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.12); }
+    .retainer-card.retainer-featured { border-color: rgba(255,92,26,0.3); background: rgba(255,92,26,0.05); }
+    .retainer-icon { font-size: 28px; }
+    .retainer-name { font-family: var(--font-head); font-size: 18px; font-weight: 700; }
+    .retainer-price { font-family: var(--font-head); font-size: 40px; font-weight: 800; letter-spacing: -2px; line-height: 1; color: var(--white); }
+    .retainer-price sup { font-size: 20px; font-weight: 600; vertical-align: super; }
+    .retainer-price span { font-size: 16px; font-weight: 400; color: var(--muted); letter-spacing: 0; }
+    .retainer-desc { font-size: 13px; color: rgba(248,245,240,0.5); line-height: 1.7; flex: 1; }
 
     /* TESTIMONIALS */
     #testimonials { background: var(--black); }
@@ -242,7 +244,7 @@
       .about-strip { grid-template-columns: 1fr; }
       .about-strip-img { min-height: 260px; }
       .about-strip-content { padding: 48px 24px; }
-      .services-grid, .process-grid, .portfolio-grid, .pricing-grid, .testimonials-grid { grid-template-columns: 1fr; }
+      .services-grid, .process-grid, .portfolio-grid, .pricing-grid, .testimonials-grid, .retainer-grid { grid-template-columns: 1fr; }
       .portfolio-card:first-child { grid-column: span 1; }
       .cta-band { grid-template-columns: 1fr; padding: 60px 24px; }
       .form-row { grid-template-columns: 1fr; }
@@ -474,48 +476,110 @@
   <div class="pricing-header">
     <div class="section-eyebrow">Pricing</div>
     <h2>Transparent pricing.<br>No surprises.</h2>
-    <p class="section-sub">Choose between a one-time build or ongoing monthly support. Every plan includes a custom website.</p>
-    <div class="pricing-toggle">
-      <span class="toggle-label active" id="label-onetime">One-Time</span>
-      <div class="toggle-switch" id="billing-toggle" onclick="toggleBilling()"><div class="toggle-knob"></div></div>
-      <span class="toggle-label" id="label-monthly">Monthly</span>
-      <span class="save-badge">Save 20%</span>
+    <p class="section-sub">One-time build fee — you own your site forever. Then add a monthly retainer only if you want ongoing marketing support.</p>
+  </div>
+
+  <!-- ONE-TIME BUILDS -->
+  <div style="margin-bottom:16px;">
+    <div style="display:inline-flex;align-items:center;gap:10px;background:rgba(200,241,53,0.08);border:1px solid rgba(200,241,53,0.2);border-radius:999px;padding:8px 18px;margin-bottom:32px;">
+      <span style="font-size:13px;font-weight:700;color:var(--lime);font-family:var(--font-head);letter-spacing:0.08em;text-transform:uppercase;">One-Time Website Builds</span>
+      <span style="font-size:12px;color:rgba(248,245,240,0.5)">— you own it forever, no ongoing fees</span>
     </div>
   </div>
-  <div class="pricing-grid">
+  <div class="pricing-grid" style="margin-bottom:80px;">
     <div class="pricing-card">
       <div class="pricing-tier">Starter</div>
-      <div class="pricing-price" id="price-starter"><sup>$</sup><span>799</span></div>
-      <div class="pricing-period" id="period-starter">one-time · no contracts</div>
+      <div class="pricing-price"><sup>$</sup><span>799</span></div>
+      <div class="pricing-period">one-time payment · no contracts</div>
       <div class="pricing-divider"></div>
       <ul class="pricing-features">
-        <li>Custom 5-page website</li><li>Mobile responsive design</li><li>Contact form + booking button</li><li>Google Maps integration</li><li>Basic SEO setup</li><li>1 round of revisions</li><li>Launched in 7 days</li>
+        <li>Custom 5-page website</li>
+        <li>Mobile responsive design</li>
+        <li>Contact form + booking button</li>
+        <li>Google Maps integration</li>
+        <li>Basic SEO setup</li>
+        <li>1 round of revisions</li>
+        <li>Launched in 7 days</li>
       </ul>
       <a href="#contact" class="btn-pricing">Get Started →</a>
     </div>
     <div class="pricing-card featured">
       <div class="featured-badge">Most Popular</div>
       <div class="pricing-tier">Growth</div>
-      <div class="pricing-price" id="price-growth"><sup>$</sup><span>1,499</span></div>
-      <div class="pricing-period" id="period-growth">one-time · no contracts</div>
+      <div class="pricing-price"><sup>$</sup><span>1,499</span></div>
+      <div class="pricing-period">one-time payment · no contracts</div>
       <div class="pricing-divider"></div>
       <ul class="pricing-features">
-        <li>Everything in Starter</li><li>Up to 10 pages</li><li>Full SEO optimization</li><li>Google Business setup</li><li>Social media profiles setup</li><li>Review showcase section</li><li>3 rounds of revisions</li><li>30 days of support</li>
+        <li>Everything in Starter</li>
+        <li>Up to 10 pages</li>
+        <li>Full SEO optimization</li>
+        <li>Google Business setup</li>
+        <li>Social media profiles setup</li>
+        <li>Review showcase section</li>
+        <li>3 rounds of revisions</li>
+        <li>30 days of post-launch support</li>
       </ul>
       <a href="#contact" class="btn-pricing">Get Started →</a>
     </div>
     <div class="pricing-card">
       <div class="pricing-tier">Pro</div>
-      <div class="pricing-price" id="price-pro"><sup>$</sup><span>2,999</span></div>
-      <div class="pricing-period" id="period-pro">one-time · no contracts</div>
+      <div class="pricing-price"><sup>$</sup><span>2,999</span></div>
+      <div class="pricing-period">one-time payment · no contracts</div>
       <div class="pricing-divider"></div>
       <ul class="pricing-features">
-        <li>Everything in Growth</li><li>Unlimited pages</li><li>Google & Facebook Ads setup</li><li>Email marketing automation</li><li>Monthly SEO reporting</li><li>Social media content (1 month)</li><li>Unlimited revisions</li><li>90 days of support</li>
+        <li>Everything in Growth</li>
+        <li>Unlimited pages</li>
+        <li>Google & Facebook Ads setup</li>
+        <li>Email marketing automation</li>
+        <li>Monthly SEO reporting</li>
+        <li>Social media content (1 month)</li>
+        <li>Unlimited revisions</li>
+        <li>90 days of post-launch support</li>
       </ul>
       <a href="#contact" class="btn-pricing">Get Started →</a>
     </div>
   </div>
-  <p class="pricing-note">Need something custom? <a href="#contact" style="color:var(--lime);text-decoration:none;">Let's talk →</a></p>
+
+  <!-- MONTHLY RETAINERS -->
+  <div style="margin-bottom:16px;">
+    <div style="display:inline-flex;align-items:center;gap:10px;background:rgba(255,92,26,0.08);border:1px solid rgba(255,92,26,0.2);border-radius:999px;padding:8px 18px;margin-bottom:12px;">
+      <span style="font-size:13px;font-weight:700;color:var(--orange);font-family:var(--font-head);letter-spacing:0.08em;text-transform:uppercase;">Optional Monthly Retainers</span>
+      <span style="font-size:12px;color:rgba(248,245,240,0.5)">— add ongoing marketing, cancel anytime</span>
+    </div>
+    <p style="font-size:14px;color:rgba(248,245,240,0.45);max-width:600px;line-height:1.6;margin-bottom:32px;">Already have your site built? Add a retainer to keep growing. These are ongoing services that require real work every month — not just hosting.</p>
+  </div>
+  <div class="retainer-grid">
+    <div class="retainer-card">
+      <div class="retainer-icon">📈</div>
+      <div class="retainer-name">SEO Management</div>
+      <div class="retainer-price"><sup>$</sup>299<span>/mo</span></div>
+      <div class="retainer-desc">Monthly keyword tracking, on-page updates, Google Business optimization, and a rankings report every month.</div>
+      <a href="#contact" class="btn-pricing" style="margin-top:auto;">Add to My Plan →</a>
+    </div>
+    <div class="retainer-card">
+      <div class="retainer-icon">📱</div>
+      <div class="retainer-name">Social Media</div>
+      <div class="retainer-price"><sup>$</sup>399<span>/mo</span></div>
+      <div class="retainer-desc">12 posts/month across Instagram & Facebook. We write, design, and post everything. You stay active without lifting a finger.</div>
+      <a href="#contact" class="btn-pricing" style="margin-top:auto;">Add to My Plan →</a>
+    </div>
+    <div class="retainer-card">
+      <div class="retainer-icon">🎯</div>
+      <div class="retainer-name">Ads Management</div>
+      <div class="retainer-price"><sup>$</sup>499<span>/mo</span></div>
+      <div class="retainer-desc">Google or Facebook ad campaigns managed monthly. We set up, monitor, and optimize — ad spend is separate and yours.</div>
+      <a href="#contact" class="btn-pricing" style="margin-top:auto;">Add to My Plan →</a>
+    </div>
+    <div class="retainer-card retainer-featured">
+      <div class="retainer-icon">⚡</div>
+      <div class="retainer-name">Full Growth Suite</div>
+      <div class="retainer-price"><sup>$</sup>999<span>/mo</span></div>
+      <div class="retainer-desc">Everything — SEO, social media, ads management, monthly site updates, and a full performance report. Best value.</div>
+      <div style="font-size:11px;color:var(--orange);font-weight:700;margin-bottom:12px;">Save $198/mo vs. buying separately</div>
+      <a href="#contact" class="btn-pricing" style="margin-top:auto;background:var(--lime);color:var(--black);border-color:transparent;">Add to My Plan →</a>
+    </div>
+  </div>
+  <p class="pricing-note">Not sure what you need? <a href="#contact" style="color:var(--lime);text-decoration:none;">Let's talk — we'll figure it out together →</a></p>
 </section>
 
 <!-- TESTIMONIALS -->
@@ -627,20 +691,6 @@
   function closeMenu() {
     document.getElementById('hamburger').classList.remove('open');
     document.getElementById('mobile-menu').classList.remove('open');
-  }
-  let isMonthly = false;
-  const prices = { starter:{onetime:'799',monthly:'149'}, growth:{onetime:'1,499',monthly:'249'}, pro:{onetime:'2,999',monthly:'449'} };
-  function toggleBilling() {
-    isMonthly = !isMonthly;
-    document.getElementById('billing-toggle').classList.toggle('monthly', isMonthly);
-    document.getElementById('label-onetime').classList.toggle('active', !isMonthly);
-    document.getElementById('label-monthly').classList.toggle('active', isMonthly);
-    const mode = isMonthly ? 'monthly' : 'onetime';
-    const period = isMonthly ? '/month · cancel anytime' : 'one-time · no contracts';
-    ['starter','growth','pro'].forEach(t => {
-      document.querySelector('#price-'+t+' span').textContent = prices[t][mode];
-      document.getElementById('period-'+t).textContent = period;
-    });
   }
   function submitForm(e) {
     e.preventDefault();

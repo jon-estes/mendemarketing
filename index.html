@@ -245,6 +245,8 @@
       .about-strip-img { min-height: 260px; }
       .about-strip-content { padding: 48px 24px; }
       .services-grid, .process-grid, .portfolio-grid, .pricing-grid, .testimonials-grid, .retainer-grid { grid-template-columns: 1fr; }
+      #pricing > div[style*="grid-template-columns:1fr 1fr"],
+      #pricing > div > div[style*="grid-template-columns:repeat(4"] { grid-template-columns: 1fr !important; }
       .portfolio-card:first-child { grid-column: span 1; }
       .cta-band { grid-template-columns: 1fr; padding: 60px 24px; }
       .form-row { grid-template-columns: 1fr; }
@@ -471,6 +473,65 @@
   </div>
 </section>
 
+<!-- VALUE SECTION -->
+<div style="background:var(--black);padding:80px 48px;">
+  <div style="text-align:center;margin-bottom:56px;">
+    <div class="section-eyebrow">Why It's Worth It</div>
+    <h2 style="margin-bottom:16px;">One new customer pays<br>for the whole site.</h2>
+    <p style="font-size:17px;color:rgba(248,245,240,0.55);max-width:560px;margin:0 auto;line-height:1.7">Most local businesses get their first website lead within 30 days of launch. For a roofer, plumber, or contractor — that's one job that pays for the site 2–10x over.</p>
+  </div>
+
+  <!-- VS comparison -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px;max-width:900px;margin:0 auto 64px;">
+    <div style="background:var(--gray);padding:36px;border-top:3px solid rgba(255,255,255,0.1);">
+      <div style="font-family:var(--font-head);font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:20px;">Without a Website</div>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(248,245,240,0.5);"><span style="color:#f87171;font-size:16px;">✗</span> Invisible on Google searches</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(248,245,240,0.5);"><span style="color:#f87171;font-size:16px;">✗</span> Lose customers to competitors who have one</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(248,245,240,0.5);"><span style="color:#f87171;font-size:16px;">✗</span> No way to collect bookings automatically</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(248,245,240,0.5);"><span style="color:#f87171;font-size:16px;">✗</span> Reviews buried on Yelp or Google with no showcase</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(248,245,240,0.5);"><span style="color:#f87171;font-size:16px;">✗</span> No online payments — chasing cash/checks</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(248,245,240,0.5);"><span style="color:#f87171;font-size:16px;">✗</span> Looks less legitimate than competitors</div>
+      </div>
+    </div>
+    <div style="background:var(--gray);padding:36px;border-top:3px solid var(--lime);">
+      <div style="font-family:var(--font-head);font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--lime);margin-bottom:20px;">With a Mende Website</div>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(248,245,240,0.75);"><span style="color:var(--lime);font-size:16px;">✓</span> Shows up when locals search Google</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(248,245,240,0.75);"><span style="color:var(--lime);font-size:16px;">✓</span> Instantly more credible than competitors without one</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(248,245,240,0.75);"><span style="color:var(--lime);font-size:16px;">✓</span> Booking requests come in while you sleep</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(248,245,240,0.75);"><span style="color:var(--lime);font-size:16px;">✓</span> 5-star reviews front and center on your homepage</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(248,245,240,0.75);"><span style="color:var(--lime);font-size:16px;">✓</span> Stripe payments built in — get paid online instantly</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(248,245,240,0.75);"><span style="color:var(--lime);font-size:16px;">✓</span> Professional look that builds immediate trust</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- What's included callouts -->
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;max-width:1100px;margin:0 auto;">
+    <div style="background:var(--gray);padding:28px 24px;text-align:center;">
+      <div style="font-size:32px;margin-bottom:12px;">💳</div>
+      <div style="font-family:var(--font-head);font-size:16px;font-weight:700;margin-bottom:8px;">Stripe Payments</div>
+      <div style="font-size:13px;color:rgba(248,245,240,0.5);line-height:1.6">Accept deposits, full payments, or retainers directly from your website. No invoicing, no chasing payments.</div>
+    </div>
+    <div style="background:var(--gray);padding:28px 24px;text-align:center;">
+      <div style="font-size:32px;margin-bottom:12px;">📅</div>
+      <div style="font-family:var(--font-head);font-size:16px;font-weight:700;margin-bottom:8px;">Online Booking</div>
+      <div style="font-size:13px;color:rgba(248,245,240,0.5);line-height:1.6">A booking form that sends you a notification the moment a customer fills it out. No missed calls.</div>
+    </div>
+    <div style="background:var(--gray);padding:28px 24px;text-align:center;">
+      <div style="font-size:32px;margin-bottom:12px;">⭐</div>
+      <div style="font-family:var(--font-head);font-size:16px;font-weight:700;margin-bottom:8px;">Reviews Showcase</div>
+      <div style="font-size:13px;color:rgba(248,245,240,0.5);line-height:1.6">Your best Google and Yelp reviews displayed beautifully on your homepage. Social proof that converts visitors.</div>
+    </div>
+    <div style="background:var(--gray);padding:28px 24px;text-align:center;">
+      <div style="font-size:32px;margin-bottom:12px;">📱</div>
+      <div style="font-family:var(--font-head);font-size:16px;font-weight:700;margin-bottom:8px;">Mobile Perfect</div>
+      <div style="font-size:13px;color:rgba(248,245,240,0.5);line-height:1.6">Over 70% of local searches happen on a phone. Your site looks and works perfectly on every screen size.</div>
+    </div>
+  </div>
+</div>
+
 <!-- PRICING -->
 <section id="pricing">
   <div class="pricing-header">
@@ -496,6 +557,7 @@
         <li>Custom 5-page website</li>
         <li>Mobile responsive design</li>
         <li>Contact form + booking button</li>
+        <li>Stripe payment integration</li>
         <li>Google Maps integration</li>
         <li>Basic SEO setup</li>
         <li>1 round of revisions</li>
@@ -516,6 +578,7 @@
         <li>Google Business setup</li>
         <li>Social media profiles setup</li>
         <li>Review showcase section</li>
+        <li>Stripe checkout + deposit collection</li>
         <li>3 rounds of revisions</li>
         <li>30 days of post-launch support</li>
       </ul>
@@ -532,6 +595,7 @@
         <li>Google & Facebook Ads setup</li>
         <li>Email marketing automation</li>
         <li>Monthly SEO reporting</li>
+        <li>Stripe subscriptions + recurring billing</li>
         <li>Social media content (1 month)</li>
         <li>Unlimited revisions</li>
         <li>90 days of post-launch support</li>
